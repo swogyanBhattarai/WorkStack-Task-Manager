@@ -34,6 +34,23 @@ WorkStack is a comprehensive task management system with a modern web interface 
 - **Secure Authentication**: JWT-based stateless authentication across frontend and backend
 - **Modern UI**: Responsive, intuitive interface built with Next.js and Tailwind CSS
 
+## Screenshots
+
+### Dashboard
+<img src="screenshots/Dashboard.png" width="800"/>
+
+### Project Management
+<img src="screenshots/Projects.png" width="800"/>
+
+### Edit Project
+<img src="screenshots/EditProject.png" width="800"/>
+
+### Activity Log
+<img src="screenshots/ActivityLog.png" width="800"/>
+
+### Tasks
+<img src="screenshots/Tasks.png" width="800"/>
+
 ## 🛠 Tech Stack
 
 ### Backend
