@@ -1,0 +1,8 @@
+spring.application.name=WorkStack
+
+spring.datasource.url=jdbc:h2:file:~/workstackDB
+spring.datasource.driver=org.h2.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+
+app.secretKey=replace-this-key-in-production

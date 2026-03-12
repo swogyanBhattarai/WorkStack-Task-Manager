@@ -1,0 +1,76 @@
+# ===========================
+# Backend (Maven / Spring Boot)
+# ===========================
+backend/target/
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven wrapper jar (downloaded on first run)
+.mvn/wrapper/maven-wrapper.jar
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# Application properties with real secrets — copy from application.properties.example
+backend/src/main/resources/application.properties
+
+# H2 database files
+*.mv.db
+*.trace.db
+
+# ===========================
+# Frontend (Next.js / Node)
+# ===========================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Environment variable files
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# ===========================
+# IDE & Editors
+# ===========================
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# VS Code
+.vscode/
+
+# Eclipse / STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# ===========================
+# OS
+# ===========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===========================
+# Logs
+# ===========================
+*.log
+logs/
