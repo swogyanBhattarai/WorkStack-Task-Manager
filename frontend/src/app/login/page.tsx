@@ -46,7 +46,6 @@ export default function LoginPage() {
     try {
       const token = await login(values.username, values.password);
       setToken(token);
-      document.cookie = `token=${token}; path=/;`;
       router.push("/dashboard");
     } catch (err) {
       const axiosErr = err as AxiosError<SpringBootError>;
