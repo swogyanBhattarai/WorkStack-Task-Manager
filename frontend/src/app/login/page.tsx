@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { setToken } from "@/lib/auth";
+import { isAuthenticated, setToken } from "@/lib/auth";
 import { login } from "@/services/userService";
 import type { SpringBootError } from "@/types";
 import { AxiosError } from "axios";
@@ -29,6 +29,12 @@ export default function LoginPage() {
   const router = useRouter();
   const [apiError, setApiError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (isAuthenticated()) {
+      router.replace("/dashboard");
+    }
+  }, [router]);
 
   const {
     register,
