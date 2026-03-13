@@ -133,8 +133,8 @@ Create or edit `backend/src/main/resources/application.properties`:
 spring.application.name=WorkStack
 
 # H2 Database Configuration
-spring.datasource.url=jdbc:h2:file:~/workstackDB
-spring.datasource.driver=org.h2.Driver
+spring.datasource.url=jdbc:h2:file:/data/workstackDB
+spring.datasource.driver-class-name=org.h2.Driver
 
 # JPA/Hibernate Configuration
 spring.jpa.hibernate.ddl-auto=update
