@@ -138,7 +138,6 @@ spring.datasource.driver=org.h2.Driver
 
 # JPA/Hibernate Configuration
 spring.jpa.hibernate.ddl-auto=update
-
 ```
 
 ### Docker Setup
@@ -148,14 +147,16 @@ spring.jpa.hibernate.ddl-auto=update
   - You can copy from `backend/src/main/resources/application.properties.example` and adjust values as needed.
 
 2. **Start the project with Docker Compose**
-   ```bash
+
+  ```bash
   docker compose up -d
-   ```
+  ```
 
 3. **Stop the project**
-   ```bash
+   
+  ```bash
   docker compose down
-   ```
+  ```
 
 The backend API runs on `http://localhost:8080` and the frontend runs on `http://localhost:3000`.
 
