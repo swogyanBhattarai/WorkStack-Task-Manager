@@ -6,20 +6,21 @@ A full-stack Multi-User Task Management System that enables teams to collaborate
 
 - [Overview](#overview)
 - [Features](#features)
+- [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
-  - [Backend Setup](#backend-setup)
-  - [Frontend Setup](#frontend-setup)
-- [Backend Documentation](#backend-documentation)
-  - [Configuration](#configuration)
-  - [API Documentation](#api-documentation)
-  - [Database Schema](#database-schema)
+  - [Prerequisites](#prerequisites)
+  - [Application Properties](#application-properties)
+  - [Docker Setup](#docker-setup)
+- [API Documentation](#api-documentation)
+- [Security](#security)
+- [Error Handling](#error-handling)
+- [Logging](#logging)
 - [Frontend Documentation](#frontend-documentation)
   - [Routes](#routes)
   - [Components](#components)
-- [Security](#security)
-- [Contributing](#contributing)
+  - [State Management](#state-management)
 
 ## 🎯 Overview
 
@@ -119,84 +120,13 @@ WorkStack/
 
 ### Prerequisites
 
-- **Java 17** or higher
-- **Maven 3.6+** — used to build and run the backend
-- **Node.js 18.17** or later — used to run the frontend
-- **npm** or **yarn**
-
-#### Installing Maven
-
-Maven is required to build and run the Spring Boot backend.
-
-1. Download Maven from the [official Apache Maven website](https://maven.apache.org/download.cgi).
-2. Extract the archive and add the `bin` directory to your system `PATH`.
-3. Verify the installation:
-   ```bash
-   mvn --version
-   ```
-
-> **Note:** Alternatively, this project includes Maven wrapper scripts (`mvnw` / `mvnw.cmd`) so you can run Maven commands without a global installation.
-
-#### Installing Node.js
-
-Node.js is required to install dependencies and run the Next.js frontend.
-
-1. Download the LTS installer from the [official Node.js website](https://nodejs.org/).
-2. Run the installer and follow the on-screen instructions.
-3. Verify the installation:
-   ```bash
-   node --version
-   npm --version
-   ```
-
-### Backend Setup
-
-1. **Navigate to backend directory**
-   ```bash
-   cd backend
-   ```
-
-2. **Build the project**
-   ```bash
-   mvnw clean install
-   # or on Unix/Mac
-   ./mvnw clean install
-   ```
-
-3. **Run the backend**
-   ```bash
-   mvnw spring-boot:run
-   # or on Unix/Mac
-   ./mvnw spring-boot:run
-   ```
-
-   The backend API will start on `http://localhost:8080`
-
-### Frontend Setup
-
-1. **Navigate to frontend directory**
-   ```bash
-   cd frontend
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-   The frontend will start on `http://localhost:3000`
-
----
-
-## 📘 Backend Documentation
-
-## ⚙️ Configuration
+- **Docker**
+- **Docker Compose**
+- **`backend/src/main/resources/application.properties` configured**
 
 ### Application Properties
 
-Create or edit `src/main/resources/application.properties`:
+Create or edit `backend/src/main/resources/application.properties`:
 
 ```properties
 # Application Name
@@ -211,10 +141,23 @@ spring.jpa.hibernate.ddl-auto=update
 
 ```
 
-### Important Configuration Notes
+### Docker Setup
 
-- **Database**: By default, H2 database files are stored in `~/workstackDB`. Data persists across application restarts.
-- **DDL Auto**: Set to `update` to automatically update database schema based on entity changes.
+1. **Configure backend properties**
+  - Ensure `backend/src/main/resources/application.properties` is present and correctly configured before starting containers.
+  - You can copy from `backend/src/main/resources/application.properties.example` and adjust values as needed.
+
+2. **Start the project with Docker Compose**
+   ```bash
+  docker compose up -d
+   ```
+
+3. **Stop the project**
+   ```bash
+  docker compose down
+   ```
+
+The backend API runs on `http://localhost:8080` and the frontend runs on `http://localhost:3000`.
 
 ## 📚 API Documentation
 
