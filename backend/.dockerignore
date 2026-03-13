@@ -7,7 +7,8 @@
 .git
 
 # Maven / Gradle build folders you don't want copied
-target/
+target/*
+!target/WorkStack-0.0.1-SNAPSHOT.jar
 build/
 
 # Logs
